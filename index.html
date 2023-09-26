@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component/dist/aframe-animation-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component/dist/aframe-layout-component.min.js"></script>
+    <!--script src="https://unpkg.com/aframe-spe-particles-component@^1.0.4/dist/aframe-spe-particles-component.min.js"></script-->
+    <script src="dist/aframe-spe-particles-component.js"></script>
+  </head>
+  <body>
+    <a-scene background="color: black">
+      <a-assets>
+        <a-mixin id="label" text="align: center; width: 10" position="0 -1.5 0"></a-mixin>
+      </a-assets>
+      <a-entity layout="type: box; columns: 6; margin: 5" position="-10 -5 -20">
+       
+        <a-entity spe-particles="texture: assets/blob.png; color: violet; position-spread: .5; distribution: sphere; radius: 0; size: 8; randomize-position: true; particle-count: 4; max-age: .1">
+          <a-text value="flutter" mixin="label"></a-text>
+        </a-entity>
+        
+        <a-entity spe-particles="texture: assets/fireworks_sheet.png; texture-frames: 5 5; particle-count: 2; max-age: 2; size: 15">
+          <a-text value="frames" mixin="label"></a-text>
+        </a-entity>
+        
+      </a-entity>
+  </a-scene>
+  </body>
+</html>
